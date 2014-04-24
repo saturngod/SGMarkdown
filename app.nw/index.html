@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SGMarkdownEditor</title>
+  <script src="marked.js"></script>
+  <script src="highlight.pack.js"></script>
+
+<script src="codemirror/lib/codemirror.js"></script>
+<script src="codemirror/addon/mode/overlay.js"></script>
+<script src="codemirror/mode/xml/xml.js"></script>
+<script src="codemirror/mode/markdown/markdown.js"></script>
+<script src="codemirror/mode/gfm/gfm.js"></script>
+<script src="codemirror/mode/javascript/javascript.js"></script>
+<script src="codemirror/mode/css/css.js"></script>
+<script src="codemirror/mode/php/php.js"></script>
+<script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="codemirror/mode/clike/clike.js"></script>
+
+<link rel="stylesheet" href="codemirror/lib/codemirror.css">
+<link rel="stylesheet" href="default.css">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <input onchange="openBrowsedFile(event)" id="chooser" type="file"
+	style="display:none" accept=".md,.txt"/>
+
+  <!--save as-->
+  <input onchange="saveAsFile(event)" id="save_as_chooser" type="file"
+  style="display:none" accept=".md,.txt" nwsaveas/>
+
+  <input onchange="saveAsHTML(event)" id="save_as_html_chooser" type="file"
+  style="display:none" accept=".html" nwsaveas/>
+
+  <div id="in"><form><textarea id="code"></textarea></form></div>
+  <div id="out"></div>
+
+<div id="copy"><img src="./images/copy.png"></div>
+<div id="editorCode">
+    <textarea id="sourceHTML" readonly="readonly"></textarea>
+    <div id="downloadBtnContainer">
+        <a id="downloadHTML" href="#">Save As HTML</a>
+    </div>
+</div>
+<script type="text/javascript" src="app.js"></script>
+<script src="nw_app.js"></script>
+<script src="nw_gui.js"></script>
+
+</body>
+</html>

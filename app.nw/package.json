@@ -1,0 +1,9 @@
+{
+  "name": "SGMarkdown",
+  "main": "index.html",
+  "window": {
+		"toolbar": true,
+    "width": 1280,
+    "height": 720
+	}
+}
