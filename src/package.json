@@ -1,0 +1,13 @@
+{
+  "name": "SGMarkdown",
+  "version" : "0.0.2",
+  "description" : "Markdown Editor build with node-webkit",
+  "main": "index.html",
+  "icon": "128.png",
+  "window": {
+		"toolbar": false,
+    "width": 1280,
+    "height": 720,
+    "position": "center"
+	}
+}

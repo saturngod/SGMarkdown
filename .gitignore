@@ -5,3 +5,5 @@ run.sh
 *.nw
 *.zip
 *.app
+.gitignore
+build
