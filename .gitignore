@@ -1,3 +1,4 @@
 SGMarkdown.app
 node-webkit-v0.9.2-osx-ia32
 run.sh
+*.DS_Store
