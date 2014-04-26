@@ -1,6 +1,6 @@
 {
   "name": "SGMarkdown",
-  "version" : "0.0.2",
+  "version" : "0.0.3",
   "description" : "Markdown Editor build with node-webkit",
 
   "devDependencies": {

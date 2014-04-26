@@ -30,6 +30,17 @@ file.append(new gui.MenuItem({ label: 'Copy HTML' , click:function(){
 
 }}));
 
+file.append(new gui.MenuItem({ label: 'Save As HTML' , click:function(){
+  saveAsHTMLFile();
+}}));
+
+file.append(new gui.MenuItem({ label: 'Config' , click:function(){
+
+  showConfig();
+
+}}));
+
+
 
 if(platform.toLowerCase() != "darwin") {
   //there is no created menu in mac and linux. Som add file menu directly
@@ -45,6 +56,6 @@ if(platform.toLowerCase() == "darwin") {
 
 
 gui.App.on('open', function(cmdline) {
-  console.log(cmdline);
+  
   readFile(cmdline);
 });

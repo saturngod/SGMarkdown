@@ -1,4 +1,4 @@
- var URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
+var URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
     navigator.saveBlob = navigator.saveBlob || navigator.msSaveBlob || navigator.mozSaveBlob || navigator.webkitSaveBlob;
     window.saveAs = window.saveAs || window.webkitSaveAs || window.mozSaveAs || window.msSaveAs;
 
@@ -101,16 +101,20 @@
     update(editor);
     editor.focus();
 
-
-document.getElementById("downloadHTML").onclick = function ()
+//UI function
+document.getElementById("cancel_config").onclick = function()
 {
-    saveAsHTMLFile();
+  showEditor();
 }
 
-document.getElementById("copy").onclick = function ()
+document.getElementById("save_config").onclick = function()
 {
-  copyHTML();
-  document.getElementById('editorCode').hidden = !document.getElementById('editorCode').hidden;
+  saveConfig();
 }
 
-document.getElementById('editorCode').hidden = true;
+document.addEventListener('DOMContentLoaded', function(){
+  loadConfig();
+
+  configEditor.setValue(getConfig());
+  //configEditor.setValue(JSON.stringify(getConfig(),null,"  "));
+});

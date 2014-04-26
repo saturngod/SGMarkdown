@@ -39,20 +39,28 @@ function copyHTML()
   val = val.replace(/<equation>((.*?\n)*?.*?)<\/equation>/ig, function(a, b){
   return '<img src="http://latex.codecogs.com/png.latex?' + encodeURIComponent(b) + '" />';
   });
-  document.getElementById('sourceHTML').value = marked(val);
 
   var gui = require('nw.gui');
   // We can not create a clipboard, we have to receive the system clipboard
   var clipboard = gui.Clipboard.get();
 
   // Or write something
-  clipboard.set(document.getElementById('sourceHTML').value, 'text');
+  clipboard.set(marked(val), 'text');
 }
 
-function saveAsHTML()
+function saveAsHTML(event)
 {
+	var val = editor.getValue();
+
+	val = val.replace(/<equation>((.*?\n)*?.*?)<\/equation>/ig, function(a, b){
+	return '<img src="http://latex.codecogs.com/png.latex?' + encodeURIComponent(b) + '" />';
+	});
+
+	var htmlVal = marked(val);
+
   var html = event.target.value;
-  fs.writeFileSync(html, document.getElementById('sourceHTML').value);
+
+  fs.writeFileSync(html, htmlVal);
 }
 
 function save(){
@@ -64,4 +72,16 @@ function save(){
     saveas();
   }
 
+}
+
+function showEditor() {
+	document.getElementById("SGMarkdownEditor").style.display = "";
+	document.getElementById("setting").style.display = "none";
+	editor.refresh();
+}
+
+function showConfig() {
+	document.getElementById("SGMarkdownEditor").style.display = "none";
+	document.getElementById("setting").style.display = "";
+	configEditor.refresh();
 }

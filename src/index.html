@@ -32,20 +32,26 @@
 
   <input onchange="saveAsHTML(event)" id="save_as_html_chooser" type="file"
   style="display:none" accept=".html" nwsaveas/>
-
+<div id="SGMarkdownEditor">
   <div id="in"><form><textarea id="code"></textarea></form></div>
   <div id="out"></div>
 
-<div id="copy"><img src="./images/copy.png"></div>
-<div id="editorCode">
-    <textarea id="sourceHTML" readonly="readonly"></textarea>
-    <div id="downloadBtnContainer">
-        <a id="downloadHTML" href="#">Save As HTML</a>
-    </div>
+</div>
+
+<div id="setting" style="display:none">
+  <form><textarea id="configFile"></textarea>
+<div class="toolbar" >
+  <div class="buttons">
+    <a href="#" class="button primary" id="save_config">Apply</a>
+    <a href="#" class="button" id="cancel_config">Close</a>
+  </div>
+</div>
+</form>
 </div>
 <script type="text/javascript" src="app.js"></script>
+<script src="config.js"></script>
 <script src="nw_app.js"></script>
 <script src="nw_gui.js"></script>
-
+<style id="configCSS"></style>
 </body>
 </html>
